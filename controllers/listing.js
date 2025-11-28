@@ -29,7 +29,7 @@ module.exports.createListing=async (req,res)=>{
             `https://nominatim.openstreetmap.org/search?format=geojson&q=${encodeURIComponent(query)}`,
         {
             headers: {
-            "User-Agent": "WanderlustApp/1.0 (your-email@example.com)"
+            "User-Agent": "WanderlustApp/1.0 (hv31012007@gmail.com)"
             }
         }
     );

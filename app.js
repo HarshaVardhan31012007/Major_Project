@@ -79,9 +79,6 @@ app.get('/demouser',async (req,res)=>{
 app.use('/listings',listingRouter);
 app.use('/listings/:id/reviews',reviewRouter);
 app.use('/',userRouter);
-app.get('/',(req,res)=>{
-    res.send('Hi! I am on root');
-});
 app.all("*",(req,res,next)=>{
     next(new ExpressError(404,"page not found"));
 });

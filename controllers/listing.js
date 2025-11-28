@@ -26,7 +26,12 @@ module.exports.showListing=async (req,res)=>{
 module.exports.createListing=async (req,res)=>{
     const query = req.body.listing.location;
     const geoRes = await axios.get(
-        `https://nominatim.openstreetmap.org/search?format=geojson&q=${encodeURIComponent(query)}`
+            `https://nominatim.openstreetmap.org/search?format=geojson&q=${encodeURIComponent(query)}`,
+        {
+            headers: {
+            "User-Agent": "WanderlustApp/1.0 (your-email@example.com)"
+            }
+        }
     );
 
    if (!geoRes.data.features || geoRes.data.features.length === 0) {
